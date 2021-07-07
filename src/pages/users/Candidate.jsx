@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
 import CandidateService from '../../services/candidateService'
-import { Table } from 'semantic-ui-react'
+import { Table,Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 export default function Candidate() {
 
@@ -23,6 +24,7 @@ export default function Candidate() {
                         <Table.HeaderCell>Email</Table.HeaderCell>
                         <Table.HeaderCell>TC No</Table.HeaderCell>
                         <Table.HeaderCell>Doğum Tarihi</Table.HeaderCell>
+                        <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -34,6 +36,11 @@ export default function Candidate() {
                                 <Table.Cell>{candidate.email}</Table.Cell>
                                 <Table.Cell>{candidate.nationalId}</Table.Cell>
                                 <Table.Cell>{candidate.birthYear}</Table.Cell>
+                                <Table.Cell>  <Button as={Link} to={`/candidate/${candidate.candidateId}`} content="Detay"
+                                    color='blue'
+                                    icon="right arrow"
+                                    labelPosition="right"
+                                /></Table.Cell>
                             </Table.Row>
                         ))
                     }

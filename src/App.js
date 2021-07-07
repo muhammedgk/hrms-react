@@ -6,13 +6,19 @@ import Dashboord from './layouts/Dashboord';
 import { Container } from 'semantic-ui-react';
 
 
+
 function App() {
   return (
-    <div className="App">
+     <div className="App">
+    
+      
+
       <Navi />
-     <Container className="main">
+     <Container  className="main">
         <Dashboord />
       </Container>
+      
+      
       
     </div>
   );
